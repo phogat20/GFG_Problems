@@ -73,24 +73,20 @@ class Node
 */
 class Solution {
     public Node deleteNode(Node head, int x) {
-        // if only one element
-        if(head == null) { // if not element return null;
-         head = null;   
-         return head;
-        }
-        
-        if(x ==1){
-            return head.next;
-        }
+        if(head == null){
+            head = null;
+            return head;
+        } 
+        if(x == 1) return head.next;
         
         Node curr = head;
         
         for(int i =1; i<x-1; i++){
-            curr = curr.next;
+          curr = curr.next;
         }
         
-        curr.next = curr.next.next;            
-            
-        return head;
+        curr.next = curr.next.next;
+      
+       return head;
     }
 }
