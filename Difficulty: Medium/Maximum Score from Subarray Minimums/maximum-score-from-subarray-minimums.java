@@ -41,7 +41,9 @@ class Solution {
         int maxSum = Integer.MIN_VALUE;
         
         for(int i=0; i<arr.size()-1; i++){
-                
+                if(sum<0){
+                    sum=0;
+                }
                 sum = arr.get(i) + arr.get(i+1);
                 maxSum = Math.max(maxSum, sum);
         }
