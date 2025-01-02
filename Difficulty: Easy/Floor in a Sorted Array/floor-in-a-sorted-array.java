@@ -10,28 +10,36 @@ class Solution {
 
     static int findFloor(int[] arr, int k) {
         // write code here
-        if(k<arr[0]){
+        
+        if (arr == null || arr.length == 0) {
+            return -1;
+        }
+        
+         if(k < arr[0]){
             return -1;
         }
         
         int l =0;
-        int h = arr.length-1;
-        
+        int h = arr.length -1;
+       
         while(l<=h){
             int mid = (l+h)/2;
-            
-            if(k<arr[mid]){
-                h = mid-1;
+         
+            if(k< arr[mid]){
+                h = mid -1;
             }else if(k>arr[mid]){
-                l = mid+1;
+                l = mid +1;
             }else{
                 return mid;
             }
         }
+        
         return h;
+        
     }
 }
-
+  
+    
 
 //{ Driver Code Starts.
 public class Main {
